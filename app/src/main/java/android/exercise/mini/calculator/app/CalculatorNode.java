@@ -53,9 +53,9 @@ public class CalculatorNode implements Serializable {
             return value;
         }
         if (next.operation == CalculatorOperation.PLUS) {
-            return (next.next == null ? next.value : next.calculate()) + value;
+            return next.calculate() + value;
         } else if (next.operation == CalculatorOperation.MINUS) {
-            return (next.next == null ? next.value : next.calculate()) - value;
+            return next.calculate() - value;
         }
         return 0;
     }
